@@ -17,9 +17,10 @@ public class AddIncomeStep extends ScenarioSteps {
   }
 
   @Step
-  public void addIncome(String value, String category, String description) {
+  public void addIncome(String value, String categoryOption, String description) {
     addIncomePage.typeIncomeValue(value);
-    addIncomePage.selectIncomeCategory(category);
+    addIncomePage.selectIncomeCategory();
+    addIncomePage.selectIncomeCategoryOption(categoryOption);
     addIncomePage.typeDescriptionIncome(description);
     addIncomePage.clickSaveIncome();
   }

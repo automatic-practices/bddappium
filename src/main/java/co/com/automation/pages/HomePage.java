@@ -5,14 +5,21 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class HomePage extends PageObjectMobile {
   @FindBy(id = "mic.app.gastosdecompras:id/buttonAddIncome")
-  private WebElementFacade addIncome;
+  private WebElementFacade btnAddIncome;
+
+  @FindBy(id = "mic.app.gastosdecompras:id/buttonList")
+  private WebElementFacade btnIncomeOutcomeList;
 
   public HomePage() {
     super();
   }
 
   public void goAddIncome() {
-    addIncome.click();
+    btnAddIncome.click();
+  }
+
+  public void goIncomeOutcomeList() {
+    btnIncomeOutcomeList.click();
   }
 }
 
@@ -20,3 +27,4 @@ public class HomePage extends PageObjectMobile {
 // Ctrl + Alt + L = Alineación del texto
 // Constructor Alt + insert
 // Alt +Enter : Importar librerias
+// Ctrl +D duplica código seleccionado
