@@ -6,7 +6,7 @@ import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import net.thucydides.core.annotations.Steps;
 
-public class AddIncomeDefinition {
+public class IncomeDefinition {
   @Steps AddIncomeStep addIncomeStep;
 
   @Dado("^que voy a la opción de agregar ingresos$")
@@ -14,7 +14,7 @@ public class AddIncomeDefinition {
     addIncomeStep.goAddIncome();
   }
 
-  @Cuando("^adiciono un ingreso con valor (.*), categoría (.*) y descripción (.*)$")
+  @Cuando("^adiciono un ingreso con valor de  (.*), categoría (.*) y descripción (.*)$")
   public void adicionar_ingresos(String value, String categoryOption, String description) {
     addIncomeStep.addIncome(value, categoryOption, description);
   }
