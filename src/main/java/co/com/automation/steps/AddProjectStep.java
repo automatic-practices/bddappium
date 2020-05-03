@@ -1,5 +1,7 @@
 package co.com.automation.steps;
 
+import static org.hamcrest.core.Is.is;
+
 import co.com.automation.pages.ExpensePage;
 import co.com.automation.pages.HomePage;
 import co.com.automation.pages.IncomePage;
@@ -7,6 +9,7 @@ import co.com.automation.pages.ProjectsPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.fluentlenium.core.annotation.Page;
+import org.hamcrest.MatcherAssert;
 
 public class AddProjectStep extends ScenarioSteps {
 
@@ -27,6 +30,10 @@ public class AddProjectStep extends ScenarioSteps {
     addProjectPage.typeProjectValue(value);
     addProjectPage.clickSaveProject();
     addProjectPage.clickReturnHome();
+  }
+
+  @Step
+  public void goIncome() {
     homePage.goAddIncome();
   }
 
@@ -38,6 +45,10 @@ public class AddProjectStep extends ScenarioSteps {
     incomePage.typeDescriptionIncome(description);
     incomePage.clickSaveIncome();
     incomePage.clickReturnHome();
+  }
+
+  @Step
+  public void goExpense() {
     homePage.goAddExpense();
   }
 
@@ -49,6 +60,10 @@ public class AddProjectStep extends ScenarioSteps {
     expensePage.typeDescriptionExpense(description);
     expensePage.clickSaveExpense();
     expensePage.clickReturnHome();
-    //homePage.assertValues();
+  }
+
+  @Step
+  public void showBalanceFinal(String balancefinal) {
+    MatcherAssert.assertThat("Saldo Final Correcto", homePage.getBalanceFinal(), is(balancefinal));
   }
 }

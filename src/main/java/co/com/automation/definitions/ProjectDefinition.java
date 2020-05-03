@@ -11,7 +11,7 @@ public class ProjectDefinition {
 
   @Steps AddProjectStep addProjectStep;
 
-  @Dado("^que agrego un proyecto llamado (.*) y valor de (.*)$")
+  @Dado("^que tengo un proyecto llamado (.*) y valor de (.*)$")
   public void agregar_proyectos(String description, String value) {
     addProjectStep.goAddProject();
     addProjectStep.AddProject(description, value);
@@ -19,14 +19,18 @@ public class ProjectDefinition {
 
   @Cuando("^adiciono un ingreso con valor (.*), categoría (.*) y descripción (.*)$")
   public void adicionar_ingreso(String value, String categoryOption, String description) {
+    addProjectStep.goIncome();
     addProjectStep.addIncome(value, categoryOption, description);
   }
 
   @Y("^adiciono un gasto con valor de (.*), categoría (.*) y descripción (.*)$")
   public void adicionar_gastos(String value, String categoryOption, String description) {
+    addProjectStep.goExpense();
     addProjectStep.addExpense(value, categoryOption, description);
   }
 
-  @Entonces("^en el home page se debe visualizar el proyecto$")
-  public void visualizar_proyecto() {}
+  @Entonces("^el saldo final deberá ser (.*)$")
+  public void visualizar_saldo_final(String balanceFinal) {
+    addProjectStep.showBalanceFinal(balanceFinal);
+  }
 }

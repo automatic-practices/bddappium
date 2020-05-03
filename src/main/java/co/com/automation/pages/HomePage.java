@@ -1,11 +1,11 @@
 package co.com.automation.pages;
 
-import static org.junit.Assert.assertEquals;
-
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.By;
 
 public class HomePage extends PageObjectMobile {
+
   @FindBy(id = "mic.app.gastosdecompras:id/buttonAddIncome")
   private WebElementFacade btnAddIncome;
 
@@ -24,20 +24,33 @@ public class HomePage extends PageObjectMobile {
   @FindBy(id = "mic.app.gastosdecompras:id/buttonSettings")
   private WebElementFacade btnSettings;
 
+  @FindBy(id = "mic.app.gastosdecompras:id/buttonProject")
+  private WebElementFacade cmbProject;
+
   @FindBy(id = "mic.app.gastosdecompras:id/textBalanceInitial")
-  private WebElementFacade txtBalanceInitial;
+  private WebElementFacade lblBalanceInitial;
 
   @FindBy(id = "mic.app.gastosdecompras:id/textIncome")
-  private WebElementFacade txtIncome;
+  private WebElementFacade lblIncome;
 
   @FindBy(id = "mic.app.gastosdecompras:id/textExpense")
-  private WebElementFacade txtExpense;
+  private WebElementFacade lblExpense;
 
   @FindBy(id = "mic.app.gastosdecompras:id/textBalanceFinal")
-  private WebElementFacade txtBalanceFinal;
+  private WebElementFacade lblBalanceFinal;
 
   public HomePage() {
     super();
+  }
+
+  public void selectProject() {
+    cmbProject.click();
+  }
+
+  public void selectProjectOption(String projectOption) {
+    getDriver()
+        .findElement(By.xpath("//android.widget.TextView[@text='" + projectOption + "']"))
+        .click();
   }
 
   public void goAddIncome() {
@@ -64,10 +77,7 @@ public class HomePage extends PageObjectMobile {
     btnSettings.click();
   }
 
-  public void assertValues() {
-    String balanceInitial = txtBalanceInitial.getTextValue();
-    String balanceFinal = txtBalanceFinal.getTextValue();
-    System.out.println("balanceIni " + balanceInitial + " balancefinal " + balanceFinal);
-    assertEquals(balanceInitial, balanceFinal);
+  public String getBalanceFinal() {
+    return lblBalanceFinal.getText();
   }
 }
