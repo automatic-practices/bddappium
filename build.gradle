@@ -28,7 +28,6 @@ sourceCompatibility = 1.8
 
 dependencies {
     testCompile group: 'junit',             name: 'junit',                  version: '4.12'
-    testCompile group: 'org.assertj',       name: 'assertj-core',           version: '3.12.2'
     testCompile group: 'org.slf4j',         name: 'slf4j-simple',           version: '1.7.7'
     compile     group: 'io.appium',         name: 'java-client',            version: '6.1.0'
     compile     group: 'net.serenity-bdd',  name: 'serenity-core',          version: '2.2.7'
