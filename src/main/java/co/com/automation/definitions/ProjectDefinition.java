@@ -1,10 +1,9 @@
 package co.com.automation.definitions;
 
 import co.com.automation.steps.AddProjectStep;
-import cucumber.api.java.es.Cuando;
-import cucumber.api.java.es.Dado;
-import cucumber.api.java.es.Entonces;
-import cucumber.api.java.es.Y;
+import io.cucumber.java.es.Cuando;
+import io.cucumber.java.es.Dado;
+import io.cucumber.java.es.Entonces;
 import net.thucydides.core.annotations.Steps;
 
 public class ProjectDefinition {
@@ -23,7 +22,7 @@ public class ProjectDefinition {
     addProjectStep.addIncome(value, categoryOption, description);
   }
 
-  @Y("^adiciono un gasto con valor de (.*), categoría (.*) y descripción (.*)$")
+  @Cuando("^adiciono un gasto con valor de (.*), categoría (.*) y descripción (.*)$")
   public void adicionar_gastos(String value, String categoryOption, String description) {
     addProjectStep.goExpense();
     addProjectStep.addExpense(value, categoryOption, description);

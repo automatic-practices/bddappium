@@ -44,11 +44,11 @@ public class AddProjectStep extends ScenarioSteps {
     incomePage.selectIncomeCategoryOption(categoryOption);
     incomePage.typeDescriptionIncome(description);
     incomePage.clickSaveIncome();
-    incomePage.clickReturnHome();
   }
 
   @Step
   public void goExpense() {
+    incomePage.clickReturnHome();
     homePage.goAddExpense();
   }
 
@@ -59,11 +59,11 @@ public class AddProjectStep extends ScenarioSteps {
     expensePage.selectExpenseCategoryOption(categoryOption);
     expensePage.typeDescriptionExpense(description);
     expensePage.clickSaveExpense();
-    expensePage.clickReturnHome();
   }
 
   @Step
   public void showBalanceFinal(String balancefinal) {
+    expensePage.clickReturnHome();
     MatcherAssert.assertThat("Saldo Final Correcto", homePage.getBalanceFinal(), is(balancefinal));
   }
 }

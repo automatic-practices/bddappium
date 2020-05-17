@@ -1,9 +1,9 @@
 package co.com.automation.definitions;
 
 import co.com.automation.steps.AddIncomeStep;
-import cucumber.api.java.es.Cuando;
-import cucumber.api.java.es.Dado;
-import cucumber.api.java.es.Entonces;
+import io.cucumber.java.es.Cuando;
+import io.cucumber.java.es.Dado;
+import io.cucumber.java.es.Entonces;
 import net.thucydides.core.annotations.Steps;
 
 public class IncomeDefinition {
