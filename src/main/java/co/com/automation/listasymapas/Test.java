@@ -14,6 +14,7 @@ public class Test {
     listaPersona.add(new Persona("Ángela", "Betancur", 1235));
     listaPersona.add(new Persona("Lucky", "Betancur", 1236));
     lista.imprimirList1(listaPersona);*/
-    lista.eliminarRepetidos();
+    // lista.eliminarRepetidos();
+    lista.imprimirListaForEach();
   }
 }

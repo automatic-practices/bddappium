@@ -26,3 +26,6 @@ public class Persona {
     return cedula;
   }
 }
+//método que reciba una lista de personas, luego filtrar las cédulas que empiecen por 1 y que la lista se transforme
+//en una lista String con los nombres de las personas de las cédulas filtradas, la lista debe tener 6 elementos, 3 de
+// de ellos inician su cédula con 1.

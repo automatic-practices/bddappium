@@ -1,10 +1,6 @@
 package co.com.automation.listasymapas;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Lista {
 
@@ -17,6 +13,7 @@ public class Lista {
     listaEnteros.add(1);
     listaEnteros.add(2);
     listaEnteros.add(0);
+    listaEnteros.set(5, 8);
   }
 
   public void imprimirList1() {
@@ -59,4 +56,19 @@ public class Lista {
       System.out.println("Lista " + index);
     }
   }
+
+  public void imprimirListaForEach() {
+    List<String> listaString = Arrays.asList("Lisandro", "Camilo", "Angela", "Carlos");
+    listaString.forEach(System.out::println);
+    System.out.println("\n");
+    listaString.stream().filter(x -> x.startsWith("C")).forEach(System.out::println);
+    System.out.println("\n");
+    listaString
+        .stream()
+        .filter(x -> x.endsWith("o"))
+        .map(String::toUpperCase)
+        .forEach(System.out::println);
+  }
+  
+
 }
