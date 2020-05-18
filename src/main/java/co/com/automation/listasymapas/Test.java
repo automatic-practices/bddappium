@@ -1,5 +1,7 @@
 package co.com.automation.listasymapas;
 
+import java.util.List;
+
 public class Test {
 
   public static void main(String[] args) {
@@ -15,6 +17,8 @@ public class Test {
     listaPersona.add(new Persona("Lucky", "Betancur", 1236));
     lista.imprimirList1(listaPersona);*/
     // lista.eliminarRepetidos();
-    lista.imprimirListaForEach();
+    // lista.imprimirListaForEach();
+    List<Persona> lista2 = lista.returnListaPersonas();
+    lista.transformList(lista2);
   }
 }
